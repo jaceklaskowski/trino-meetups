@@ -1,0 +1,6 @@
+version: "3.8"
+services:
+  presto:
+    image: prestosql/presto
+    ports:
+      - "8080:8080"

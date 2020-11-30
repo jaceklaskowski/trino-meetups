@@ -10,6 +10,8 @@ services:
       POSTGRES_HOST_AUTH_METHOD: trust
   kafka:
     image: wurstmeister/kafka:2.13-2.6.0
+    deploy:
+      replicas: 3
     ports:
       - "9092"
     environment:

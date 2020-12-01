@@ -1,9 +1,19 @@
 version: "3.8"
 services:
-  meetup_presto:
-    build: .
+  coordinator:
+    build:
+      context: .
+      args:
+        - nodetype=coordinator
+        - nodeenvname
     ports:
       - "8080:8080"
+  worker:
+    build:
+      context: .
+      args:
+        - nodetype=worker
+        - nodeenvname
   postgres:
     image: postgres:13.1
     environment:

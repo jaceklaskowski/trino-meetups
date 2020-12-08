@@ -8,6 +8,8 @@ services:
         - nodeenvname
     ports:
       - "8080:8080"
+    volumes:
+      - ./presto-meetup-connector/target/scala-2.13:/usr/lib/presto/plugin/meetup
   worker:
     build:
       context: .

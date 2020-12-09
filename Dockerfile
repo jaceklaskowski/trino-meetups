@@ -11,5 +11,5 @@ RUN echo "node.environment=$nodeenvname" > default/etc/node.properties
 COPY \
     postgres.properties \
     kafka.properties \
-#    meetup.properties \
+    meetup.properties \
     default/etc/catalog/

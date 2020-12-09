@@ -9,6 +9,7 @@ class MeetupPlugin extends Plugin
     with PrintlnLogging {
   override def getConnectorFactories: JIterable[ConnectorFactory] = {
     log("getConnectorFactories")
-    super.getConnectorFactories
+    import scala.jdk.CollectionConverters._
+    Seq[ConnectorFactory](new MeetupConnectorFactory).asJava
   }
 }

@@ -25,3 +25,7 @@ docker-compose ps
 ```text
 docker-compose exec coordinator presto
 ```
+
+```text
+presto> show catalogs;
+```

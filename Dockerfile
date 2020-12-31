@@ -1,7 +1,8 @@
-FROM prestosql/presto:346
+ARG prestoVersion=latest
+FROM prestosql/presto:${prestoVersion}
 
 ARG nodetype
-ARG nodeenvname
+ARG nodeenvname=default
 
 WORKDIR /usr/lib/presto
 
@@ -11,5 +12,6 @@ RUN echo "node.environment=$nodeenvname" > default/etc/node.properties
 COPY \
     postgres.properties \
     kafka.properties \
-    meetup.properties \
+# The following won't work in minikube
+#    meetup.properties \
     default/etc/catalog/
